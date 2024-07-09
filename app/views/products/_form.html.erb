@@ -1,0 +1,30 @@
+<%#= form_with(model: product) do |form| %>
+  <%# if product.errors.any? %>
+<!--    <div style="color: red">-->
+<!--      <h2><%#= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# product.errors.each do |error| %>
+<!--          <li><%#= error.full_message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+<!--  <div>-->
+    <%#= form.submit %>
+<!--  </div>-->
+<%# end %>
+
+<%= form_with model: @product, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :sku %>
+  <%= form.text_field :sku %>
+
+  <%= form.label :price %>
+  <%= form.number_field :price, step: 0.01 %>
+
+  <%= form.submit %>
+<% end %>
