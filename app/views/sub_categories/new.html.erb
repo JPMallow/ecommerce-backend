@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-header">
+    <%= @sub_category.new_record? ? 'New Subcategory' : 'Edit Subcategory' %>
+  </div>
+  <div class="card-body">
+    <%= render 'form', subcategory: @sub_category %>
+  </div>
+</div>
